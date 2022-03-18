@@ -1,0 +1,18 @@
+#Given the following program, explain what it prints on the screen and state the reason :
+
+int main () {
+  int a=3,pid;
+  printf ("Hola\n");
+  pid=fork();
+  printf ("Adios\n");
+}
+
+Prints:
+Hola
+
+Adios 
+Adios
+
+The reason is that after the fork there are 2 processes (father and son) and, in this case, they both do the same. 
+Therefore, both print Adios.
+

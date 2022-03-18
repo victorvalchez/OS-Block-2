@@ -1,0 +1,23 @@
+When you execute the following program, how many time will you see "Soy el hijo n"?  State your answer
+
+main () {
+int i,pid;
+for (i=1; i<=2; i++){
+  pid = fork();
+  if ( pid==0) {
+    printf ("Soy el hijo %d\n", i);
+    exit(0); }
+}}
+
+#SOLUTION:
+Output of execution:
+ 
+Soy el hijo 1
+Soy el hijo 2
+ 
+The reason is that although 2 fork () are made, in each case only runs a child process. 
+
+And this one does not fork () because it prints a message and ends with exit (). 
+
+
+

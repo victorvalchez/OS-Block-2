@@ -1,0 +1,31 @@
+#ENUNCIADO:
+a) Explain the behaviour of the following program. How many times appears each word?
+  main (){
+  printf ("Hola\n");
+  fork ();
+  printf ("Uno\n");
+  fork ();
+  printf ("Dos pid=%d\n",getpid());
+  }
+
+b) Which order could they appear?
+
+#SOLUTION:
+a) An execution ecample:
+    Hola
+    Uno
+    Dos pid=4530
+    Uno
+    Dos pid=4532
+    Dos pid=4533
+    Dos pid=4534
+     
+    The reason is that every time a fork () is made, two processes appear. Therefore after the first fork () there are 2 processes, 
+    which also fork (), resulting in 4 processes (22). Entonces:
+    Hola appears 1 vez
+    Uno appears 2 veces
+    Dos appears 4 veces
+
+b) The order may vary depending on the order of execution of the processes in each case, which depends on the system scheduler. 
+It is recommended to run the example several times to test it
+
