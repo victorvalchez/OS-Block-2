@@ -17,6 +17,7 @@ B) Modify the program so that the child writes the command output to a file inst
 int main(int argc, char *argv[])
 {
  int i,pid;
+ //No argument received
  if (argc < 2){
    printf("Usage: exec-comando <comando>\n");
    return(-1);

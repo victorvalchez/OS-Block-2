@@ -1,7 +1,7 @@
 #Given the following program, explain what it prints on the screen and state the reason :
 
 int main () {
-  int a=3,pid;
+  int a=3,pid;          // PID es el process ID, es un integer, la a=3 no sirve de nada
   printf ("Hola\n");
   pid=fork();
   printf ("Adios\n");

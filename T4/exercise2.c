@@ -12,7 +12,7 @@ What happens if it doesn't go to sleep?
 int main () {
 int x=0,pid;
   pid=fork (); /*Se crea el hijo */
-  if (pid == 0){ 
+  if (pid == 0){    // El pid devuelve 0 para el hijo, y el ID del hijo para el padre
     printf ("Soy el hijo\n"); /* Escrito por el hijo en pantalla*/
     printf ("Adios hijo; x=%d, pid=%d ppid=%d\n",x,getpid(), getppid()); 
   }
