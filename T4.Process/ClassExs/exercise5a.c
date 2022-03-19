@@ -16,7 +16,7 @@ B) Modify the program so that the child writes the command output to a file inst
 // A)
 int main(int argc, char *argv[])
 {
- int i,pid;
+ int i,pid, pidd;
  //No argument received
  if (argc < 2){
    printf("Usage: exec-comando <comando>\n");
@@ -29,6 +29,7 @@ int main(int argc, char *argv[])
         execvp (argv[1], &argv[1]);
         printf ("ERROR, aqui solo se llega si ha fallado el exec\n");
   }
-  wait (NULL);
+  pidd = wait(NULL); // Bloquea el parent process hasta que alguno de sus hijos haya finalizado
+  printf("pidd is %i\n", pidd);
   printf ("FIN  del padre\n");
  } //cierre del main

@@ -26,6 +26,8 @@ a) An execution ecample:
     Uno appears 2 veces
     Dos appears 4 veces
 
+El primer proceso ejecuta todo, el seguno proceso ejecuta solo print(uno) y print(dos), y el tercero y el cuarto solo print(dos)
+
 b) The order may vary depending on the order of execution of the processes in each case, which depends on the system scheduler. 
 It is recommended to run the example several times to test it
 

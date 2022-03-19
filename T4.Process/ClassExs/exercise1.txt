@@ -15,4 +15,3 @@ Adios
 
 The reason is that after the fork there are 2 processes (father and son) and, in this case, they both do the same. 
 Therefore, both print Adios.
-

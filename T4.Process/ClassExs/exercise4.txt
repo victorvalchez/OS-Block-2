@@ -19,5 +19,7 @@ The reason is that although 2 fork () are made, in each case only runs a child p
 
 And this one does not fork () because it prints a message and ends with exit (). 
 
+SI QUITAMOS EL EXIT, EL SOY EL HIJO 2 SE HARIA 2 VECES YA QUE AL HACER FORK SE DUPLICA EL PRIMER PROCESS CREADO QUE VA
+A IMPRIMIR SOY EL HIJO 1 Y A LA SIGUIENTE VEZ IMPRIMIRA SOY EL HIJO 2
 
 
