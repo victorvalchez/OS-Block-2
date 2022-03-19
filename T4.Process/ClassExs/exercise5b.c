@@ -25,7 +25,9 @@ int main(int argc, char *argv[])
  if(pid==0){ //crear hijo
         printf ("Hijo creado, va a ejecutar el comando\n");
         // Redirección de salida
-        close(STDOUT_FILENO);
+        close(STDOUT_FILENO);   
+        //STDOUT_FILENO es para que te lo printee por terminal, ntonces al abrir el otro archivo, 
+        //le estas diciendo que quieres que eñl exec en vez de por terminal te lo guarde ahi.
         open("salida-com.txt",O_RDWR|O_CREAT,0660);
         // Ejecución comando
         execvp (argv[1], &argv[1]);
