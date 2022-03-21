@@ -25,8 +25,8 @@ void * imprimir_puntos(void *arg) {
     j=myglobal;
     j=j+1;
     printf(".");
-    fflush(stdout);
-   sleep(1);
+    fflush(stdout);  //limpiar buffer NO NECESARIO
+    sleep(1);
     myglobal=j;
   }
   return NULL;
@@ -40,7 +40,7 @@ int main(void) {
     printf("error creating thread.");
     abort();
   }
-
+  //la thread y el loop se ejecutan a la vez 
   for ( i=0; i<20; i++) {
     myglobal=myglobal+1;
     printf("o"); fflush(stdout);

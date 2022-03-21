@@ -7,12 +7,13 @@
 #include <stdlib.h>
 #include <pthread.h>
 
-main () {
-int i,pid;
-for (i=1; i<=2; i++){
-  pid = fork();
-  if ( pid==0) {
-    printf ("Soy el hijo %d\n", i);
-    exit(0); }
-}
+int main() {
+  int i,pid;
+  for (i=1; i<=2; i++){
+    pid = fork();
+    if ( pid==0) {
+      printf ("Soy el hijo %d\n", i);
+      exit(0); 
+    }
+  }
 }
