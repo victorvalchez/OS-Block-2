@@ -14,8 +14,7 @@ B) Modify the program so that the child writes the command output to a file inst
 #SOLUTION:
 */
 // A)
-int main(int argc, char *argv[])
-{
+int main(int argc, char **argv) {
  int i,pid, pidd;
  //No argument received
  if (argc < 2){

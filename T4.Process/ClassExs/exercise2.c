@@ -10,8 +10,8 @@ Important: the father should get some sleep to give the child  time to finish an
 What happens if it doesn't go to sleep?
 */
 
-int main () {
-int x=0,pid;
+int main() {
+int x=0, pid;
   pid=fork (); /*Se crea el hijo */
   if (pid == 0){    // El pid devuelve 0 para el hijo, y el ID del hijo para el padre
     printf ("Soy el hijo\n"); /* Escrito por el hijo en pantalla*/

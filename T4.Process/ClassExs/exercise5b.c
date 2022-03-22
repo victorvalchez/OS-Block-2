@@ -28,7 +28,7 @@ int main(int argc, char *argv[])
         close(STDOUT_FILENO);   
         //STDOUT_FILENO es para que te lo printee por terminal, ntonces al abrir el otro archivo, 
         //le estas diciendo que quieres que eñl exec en vez de por terminal te lo guarde ahi.
-        open("salida-com.txt",O_RDWR|O_CREAT,0660);
+        open("salida-com.txt",O_RDWR|O_CREAT,0666);
         // Ejecución comando
         execvp (argv[1], &argv[1]);
         printf ("ERROR, aqui solo se llega si ha fallado el exec\n");
