@@ -11,8 +11,8 @@ to write or read the data they use, to communicate through a pipe created by the
 - The prog_esc just writes a string to the STDOUT standard output.
 */
 int main () {
-        int             fd[2];
-        pid_t           pid_hijo;
+        int fd[2];
+        pid_t pid_hijo;
         /* Establecemos la tuberia  */
         pipe (fd);
         if ((pid_hijo = fork ())== -1) {
@@ -20,7 +20,7 @@ int main () {
         }
         if (pid_hijo == 0 ) { /* el hijo */
         /*  Cambio la salida estándar por la de la tuberia */
-                dup2 (fd[1],1);
+                dup2 (fd[1],1);  //esta funcion copia el fd[1] y lo renombra a 1
                 close (fd[0]);
         /* prog_esc escribe sobre la salida estándar, que sera la tuberia */
                 execlp ("./prog_esc", "./prog_esc", NULL);

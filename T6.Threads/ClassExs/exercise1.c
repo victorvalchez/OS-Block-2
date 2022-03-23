@@ -14,7 +14,7 @@ The parent thread program must wait until the child thread terminates. */
 
 void * thread_function(void *arg) {
   int i;
-  for ( i=0 ; i < 3 ; i++ ) {
+  for ( i=0 ; i <= 2 ; i++ ) {
     printf("Thread says hi!\n");
     sleep(1);
   }

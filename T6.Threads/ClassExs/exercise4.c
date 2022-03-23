@@ -31,7 +31,7 @@ void *func1 ()
 
 void *func2 ()
 {
-  pthread_t tid = pthread_self(); /* identificador de thread*/
+  pthread_t tid = pthread_self(); /* identificador de thread, NO SE ESTÁ USANDO AQUÍ*/
   printf("Soy el thread 2 y voy a ejecutar func2 \n");
   sleep(5);
   printf("Soy el thread 2 y he terminado de ejecutar la función 2\n");
@@ -45,10 +45,10 @@ int main(void)
   /*La propia función main es un thread*/
 
   /*inicializa los parámetros de los threads por defecto*/
-  pthread_attr_init (&attr);
+  //pthread_attr_init (&attr);
   printf("Soy la función main y voy a lanzar los dos threads \n");
-  pthread_create (&thread1, &attr, func1, NULL);
-  pthread_create (&thread2, &attr, func2, NULL);
+  pthread_create (&thread1, NULL, func1, NULL);
+  pthread_create (&thread2, NULL, func2, NULL); //pthread_create (&thread2, &attr, func2, NULL); es lo mismo
   printf("Soy main: he lanzado los dos threads y termino\n");
   pthread_exit (NULL);
 }

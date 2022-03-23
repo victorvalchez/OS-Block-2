@@ -18,20 +18,21 @@ void llegoAlarma (int s){
   finTiempo=1;
 }
 int main (){
-int i,faltan,n=33;
-struct sigaction sa;
+	int i,faltan,n=33;
+	struct sigaction sa;
+
 	sa.sa_handler= llegoAlarma;
 	sa.sa_flags=0;
 	sigemptyset (&(sa.sa_mask));
 	sigaction (SIGALRM, &sa, NULL);
 	alarm(3);
-  printf ("Dar un número (tiene 3 segundos) \n" );
+	printf ("Dar un número (tiene 3 segundos) \n" );
 	scanf ("%d",&n);
 
 	if (finTiempo){
-    printf ("Se acabo el tiempo el número  sera el %d\n",n );
-  }
+    	printf ("Se acabo el tiempo el número  sera el %d\n",n );
+	}
 	else {
-	  printf ("número leído %d\n",n );
-  }
+		printf ("número leído %d\n",n );
+	}
 }
