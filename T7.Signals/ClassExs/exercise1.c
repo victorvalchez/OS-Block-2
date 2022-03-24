@@ -27,7 +27,7 @@ int main() {
     pid = fork();
     if (pid == 0){
         sleep (10);
-        kill (pid, SIGUSR1);
+        kill (pid, SIGUSR1); //send to child process the signal sigusr1
         exit(0);
     }
     else { //hijo

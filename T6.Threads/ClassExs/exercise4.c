@@ -42,6 +42,7 @@ void *func2 ()
 int main(void)
 {
   thmain = pthread_self();
+  printf("Thread id: %d\n", thmain);    //Solo para obetener el ID
   /*La propia función main es un thread*/
 
   /*inicializa los parámetros de los threads por defecto*/
@@ -49,6 +50,7 @@ int main(void)
   printf("Soy la función main y voy a lanzar los dos threads \n");
   pthread_create (&thread1, NULL, func1, NULL);
   pthread_create (&thread2, NULL, func2, NULL); //pthread_create (&thread2, &attr, func2, NULL); es lo mismo
+  sleep(6);
   printf("Soy main: he lanzado los dos threads y termino\n");
   pthread_exit (NULL);
 }
