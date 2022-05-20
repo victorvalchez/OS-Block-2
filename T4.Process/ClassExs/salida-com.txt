@@ -1,0 +1,15 @@
+File descriptor: 1
+exercise1.txt
+exercise2
+exercise2.c
+exercise3
+exercise3.c
+exercise3.txt
+exercise4
+exercise4.c
+exercise4.txt
+exercise5a
+exercise5a.c
+exercise5b
+exercise5b.c
+salida-com.txt

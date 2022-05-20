@@ -3,21 +3,21 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-void * thread_function(void *arg) {
+void thread_function() {
   int i;
   for ( i=0 ; i < 2 ; i++ ) {
     printf("Thread says hi!\n");
     sleep(1);
   }
 	printf("Thread exists\n");
-  return NULL;
+  exit(0);
 }
 
-int main(int argc, char ** argv) {
+int main(int argc, char *argv[]) { // same as ** argv
 
   pthread_t mythread;
 	printf("Launching new thread . . .\n");  
-  if ( pthread_create( &mythread, NULL, thread_function, NULL) ) {
+  if ( pthread_create( &mythread, NULL, (void *)thread_function, NULL) ) {
     printf("error creating thread.");
     abort();
   }

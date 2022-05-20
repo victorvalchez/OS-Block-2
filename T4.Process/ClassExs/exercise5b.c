@@ -17,6 +17,7 @@ B) Modify the program so that the child writes the command output to a file inst
 int main(int argc, char *argv[])
 {
  int i,pid;
+ int desc;
  if (argc < 2){
    printf("Usage: exec-comando <comando>\n");
    return(-1);
@@ -28,11 +29,13 @@ int main(int argc, char *argv[])
         close(STDOUT_FILENO);   
         //STDOUT_FILENO es para que te lo printee por terminal, ntonces al abrir el otro archivo, 
         //le estas diciendo que quieres que eñl exec en vez de por terminal te lo guarde ahi.
-        open("salida-com.txt",O_RDWR|O_CREAT,0666);
+        desc = open("salida-com.txt",O_RDWR|O_CREAT,0666);
         // Ejecución comando
+        printf("File descriptor: %i\n", desc);
         execvp (argv[1], &argv[1]);
         printf ("ERROR, aqui solo se llega si ha fallado el exec\n");
   }
   wait (NULL);
   printf ("FIN  del padre\n");
  } //cierre del main
+

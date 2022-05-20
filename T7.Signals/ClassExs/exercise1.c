@@ -22,11 +22,11 @@ void capturaSenal1 (int s){
 }
 int main() {
     int i,pid;
-    struct sigaction sa1,sa2;
+    struct sigaction sa1;
 
     pid = fork();
-    if (pid == 0){
-        sleep (10);
+    if (pid != 0){
+        sleep (5);
         kill (pid, SIGUSR1); //send to child process the signal sigusr1
         exit(0);
     }

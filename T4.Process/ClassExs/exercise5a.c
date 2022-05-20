@@ -17,8 +17,8 @@ B) Modify the program so that the child writes the command output to a file inst
 int main(int argc, char **argv) {
  int i,pid, pidd;
  //No argument received
- if (argc < 2){
-   printf("Usage: exec-comando <comando>\n");
+ if (argc < 2){  // 1 el nombre del programa, 2 el comando
+   printf("Usage: ./exercise5a <comando>\n");
    return(-1);
  }
  pid=fork();
@@ -26,9 +26,9 @@ int main(int argc, char **argv) {
         printf ("Hijo creado, va a ejecutar el comando\n");
        // Ejecución comando
         execvp (argv[1], &argv[1]);
-        printf ("ERROR, aqui solo se llega si ha fallado el exec\n");
+        perror ("ERROR, aqui solo se llega si ha fallado el exec\n");
   }
-  pidd = wait(NULL); // Bloquea el parent process hasta que alguno de sus hijos haya finalizado
-  printf("pidd is %i\n", pidd);
-  printf ("FIN  del padre\n");
+  pidd = wait(NULL); // Bloquea el parent process hasta que alguno de sus hijos haya finalizado, returnea el id del child que ha acabado
+  printf("childs process id is %i\n", pidd);
+  printf ("FIN  del padre, %i\n", getpid());
  } //cierre del main

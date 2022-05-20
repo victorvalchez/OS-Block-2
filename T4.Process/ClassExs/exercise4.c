@@ -13,10 +13,10 @@ int main() {
     pid = fork();
     if ( pid==0) {
       printf ("Soy el hijo %d\n", i);
-      exit(0);
-    //pid = fork();
-    //printf ("Soy el hijo %d\n", i);
-    //exit(0);
+      //exit(0);
+    pid = fork();
+    printf ("Soy el hijo %d\n", i);
+    exit(0);
     }
   }
 }
