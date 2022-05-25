@@ -6,7 +6,6 @@
 #define PERM 		0644		/*permisos para creación de archivo*/
 
 int copyfile (char *name1, char *name2)	/*copia file name1 a file name2*/
-//Hay que pasar el nombre con ùntero porque queremos la pusion en memoria, ya que sino solo pasariamos el primer caracter
 {
 	int infile, outfile, nread;
 	char buffer [BUFSIZE];
