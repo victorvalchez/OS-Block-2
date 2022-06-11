@@ -17,7 +17,7 @@ int main(){
 			miPid=getpid();
 		 	printf("Proceso hijo - pid=%d\n", getpid());
 			sprintf(cadena1, "%d", miPid); 
-			execlp("./hijo", "hijo", cadena1, NULL);
+			execlp("./hijo.c", "hola", cadena1);
 			exit(-1);
 		default: /* proceso padre */
 		 	printf("Proceso padre - pid=%d\n", getpid());

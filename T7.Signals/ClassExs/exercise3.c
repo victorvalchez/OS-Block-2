@@ -45,7 +45,7 @@ int main (){
     sa2.sa_handler=muerteHijo;
     sa2.sa_flags=0;
     sigemptyset(&(sa2.sa_mask));
-    sigaction (SIGCHLD, &sa2, NULL); //Indica que el child a acabdo SIGCHLD
+    sigaction (SIGCHLD, &sa2, NULL); //Indica que el child ha acabdo SIGCHLD
 
     pause(); 
     pause(); 

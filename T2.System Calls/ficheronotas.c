@@ -15,13 +15,14 @@ struct Alumno {
   char nombre[20];
   float notas[NUMNOTAS]; };
 
-typedef struct Alumno tAlumno;
+typedef struct Alumno tAlumno;  //Esto sirve para poder invocar a la struct the alumno poniendo solo alumno, sino habria que poner 
+// struct ALumno 'nombre'
 
 void pedirAlumno(tAlumno *alumno);
 void escribirAlumno(tAlumno alumno, int fd);
 
 int main (int argc, char **argv) {
-  tAlumno clase[NUMALUMNOS];
+  struct Alumno clase[NUMALUMNOS]; //Asi o con tAlum
   tAlumno Al;
   float *media;
   int i, numAl, fichid;

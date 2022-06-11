@@ -20,8 +20,8 @@ int main () {
         }
         if (pid_hijo == 0 ) { /* el hijo */
         /*  Cambio la salida estándar por la de la tuberia */
-                dup2 (fd[1],1);  //esta funcion copia el fd[1] y lo renombra a 1
-                close (fd[0]);
+                dup2 (fd[1],1);  //esta funcion copia el fd[1] y lo copia en el standard putput stdout entonces lo que salga por el fd[1] va a salir en el stdout
+                close (fd[0]); // cerramos el descriptor no necesario
         /* prog_esc escribe sobre la salida estándar, que sera la tuberia */
                 execlp ("./prog_esc", "./prog_esc", NULL);
         }

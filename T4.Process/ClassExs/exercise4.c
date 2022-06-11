@@ -10,19 +10,18 @@
 int main() {
   int i,pid;
   for (i=1; i<=2; i++){
-    pid = fork();
+    pid = fork(); //en la segunda iteracion se tienen 2 hijos pero solo imprime el nuevo ya que es el == 0
     if ( pid==0) {
       printf ("Soy el hijo %d\n", i);
-      //exit(0);
-    pid = fork();
-    printf ("Soy el hijo %d\n", i);
-    exit(0);
+      pid = fork(); //creamos un nieto
+      printf ("Soy el hijo %d\n", i);
+      exit(0); //acaba el nieto
     }
   }
 }
 
-/* Cuando hacemos el primer fork, creamos un process, ese process 1 va a imprimir soy el hijo i dos veces, luego
-al hacer el segundo fork, vamos a crear otro, que va a imprimir soy el hijo i una vez,
+/* Cuando hacemos el primer fork, creamos un process, ese process 1 va a imprimir soy el hijo i dos veces (el primer print y el segundo), 
+luego al hacer el segundo fork, vamos a crear otro, que va a imprimir soy el hijo i una vez,
 En la segunda iteracion del loop, duplicamos los dos processes ya creados, entonces se va a imprimir soy el hijo 2, 2 veces
 por cada process.
 

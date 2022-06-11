@@ -2,6 +2,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <signal.h>
+#include <sys/wait.h>
 /*
 Write a program in C that implements the command:
  “ls | wc”. 
@@ -24,9 +25,10 @@ int main(void){
           close(STDOUT_FILENO); 
           dup(fd[1]);
           close(fd[1]);
-          execlp("ls","ls",NULL);
+          execlp("ls","ls", NULL);
           perror("execlp");
           exit(-1);
+          break;
       default:  
 /* proceso padre ejecuta ``wc'' */
           close(fd[1]); 
@@ -37,3 +39,5 @@ int main(void){
           perror("execlp");
         }
 }
+
+/*El hijo hace ls y se lo comunica al padre a traves del pipe entonces luego el padre hace wc de eso*/

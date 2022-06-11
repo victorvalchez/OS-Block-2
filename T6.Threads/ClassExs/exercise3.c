@@ -21,7 +21,7 @@ typedef struct {
 
 void *hello(void *arg)
 {
-        parm *p=(parm *)arg;
+        parm *p = arg;
         printf("Hello from thread %d\n", p->id);
         return (NULL);
 }

@@ -12,7 +12,7 @@
 
 The parent thread program must wait until the child thread terminates. */
 
-void * thread_function(void *arg) {
+void thread_function(void *arg) {
   int i;
   for ( i=0 ; i <= 2 ; i++ ) {
     printf("Thread says hi!\n");
@@ -20,10 +20,10 @@ void * thread_function(void *arg) {
   }
 }
  
-int main(int argc, char ** argv) {
+int main(int argc, char * argv[]) {
   pthread_t mythread;
 	printf("Launching new thread . . .\n");  
-  if ( pthread_create( &mythread, NULL, thread_function, NULL) ) {      /*primero tu thread, luego si no quieres ninguna constante
+  if ( pthread_create( &mythread, NULL, (void *)thread_function, NULL) ) {      /*primero tu thread, luego si no quieres ninguna constante
   va con NULL, luego la funcion que quieres ejecutar, yluego el argumento que es NULL en este caso*/
     printf("error creating thread.");
     abort();

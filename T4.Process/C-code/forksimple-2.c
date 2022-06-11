@@ -11,6 +11,7 @@ int x=0,pid;
   if (pid == 0){ 
     printf ("Soy el hijo\n"); /* Escrito por el hijo en pantalla*/
     printf ("Adios hijo; x=%d, pid=%d ppid=%d\n",x,getpid(), getppid()); 
+    sleep(3);
   }
   else { 
     sleep(1);

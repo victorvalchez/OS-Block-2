@@ -1,5 +1,3 @@
-
-
 #include <unistd.h>
 #include <sys/types.h>
 #include <sys/stat.h>
@@ -10,8 +8,8 @@
 
 int main(void)
 {
-  int fd;
-  char buf1[]="abc";
+  int fd, size;
+  char *buf1="abc";
   char buf2[]="ABC";
   
   /* creat() creates a file and is equivalent to open() with flags equal to O_CREAT|O_WRONLY|O_TRUNC 
@@ -25,7 +23,7 @@ int main(void)
 
   */ 
 
-  if ( (fd=creat("file_hole",0666))<0)
+  if ( (fd=creat("file_hole.txt",0666))<0)
   {
     perror("error creating the file");
     exit(1);
@@ -37,10 +35,11 @@ int main(void)
     exit(1);		
   }
 
-  if( lseek(fd,100,SEEK_CUR) < 0) {
+  if((size = lseek(fd,100,SEEK_CUR)) < 0) { // a la current position le sumamos 100
      perror("seek error");
      exit(1);
   }
+  printf("Size is: %d\n", size);
 
   if ( write(fd,buf2,3) <0) {    
     perror("write error");
