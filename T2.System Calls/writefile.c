@@ -1,8 +1,11 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 
 >>>>>>> 4bf36ed (new)
+=======
+>>>>>>> 978a8f7 (final)
 #include <unistd.h>
 #include <sys/types.h>
 #include <sys/stat.h>
@@ -14,12 +17,17 @@
 int main(void)
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
   int fd, size;
   char *buf1="abc";
 =======
   int fd;
   char buf1[]="abc";
 >>>>>>> 4bf36ed (new)
+=======
+  int fd, size;
+  char *buf1="abc";
+>>>>>>> 978a8f7 (final)
   char buf2[]="ABC";
   
   /* creat() creates a file and is equivalent to open() with flags equal to O_CREAT|O_WRONLY|O_TRUNC 
@@ -34,10 +42,14 @@ int main(void)
   */ 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   if ( (fd=creat("file_hole.txt",0666))<0)
 =======
   if ( (fd=creat("file_hole",0666))<0)
 >>>>>>> 4bf36ed (new)
+=======
+  if ( (fd=creat("file_hole.txt",0666))<0)
+>>>>>>> 978a8f7 (final)
   {
     perror("error creating the file");
     exit(1);
@@ -50,6 +62,7 @@ int main(void)
   }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   if((size = lseek(fd,100,SEEK_CUR)) < 0) { // a la current position le sumamos 100
      perror("seek error");
      exit(1);
@@ -61,6 +74,13 @@ int main(void)
      exit(1);
   }
 >>>>>>> 4bf36ed (new)
+=======
+  if((size = lseek(fd,100,SEEK_CUR)) < 0) { // a la current position le sumamos 100
+     perror("seek error");
+     exit(1);
+  }
+  printf("Size is: %d\n", size);
+>>>>>>> 978a8f7 (final)
 
   if ( write(fd,buf2,3) <0) {    
     perror("write error");
