@@ -1,2 +1,8 @@
-# OS.BLOCK2.EXERCISES
-#### Exercises for Block 2 of Operating Systems Subject in UC3M
+## Operating Systems UC3M
+### Block 2 Processes & Threads Exercises
+Exercises explained with comments (mostly in Spanish)
+
+
+##  Sistemas Operativos UC3M
+### Bloque 4 Ejercicios de Procesos e Hilos 
+Ejercicios explicados con comentarios
